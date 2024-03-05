@@ -1,8 +1,10 @@
+<!-- css file -->
+<link rel="stylesheet" href="style.css">
 <header class="main-header">
   <nav class="navbar navbar-static-top">
     <div class="container">
       <div class="navbar-header">
-        <a href="index.php" class="navbar-brand"><b>Servee</a>
+      <img src="./images/icon logo.png.png" alt="" class="icon logo">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
           <i class="fa fa-bars"></i>
         </button>
