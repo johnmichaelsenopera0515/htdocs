@@ -5,7 +5,7 @@
 
 	<?php include 'includes/navbar.php'; ?>
 	 
-	  <div class="content-wrapper">
+	  <div class="content-wrapper" style="background-color: linear-gradient(45deg, #d61fd3, transparent);">>
 	    <div class="container">
 
 	      <!-- Main content -->
@@ -30,13 +30,13 @@
 		                </ol>
 		                <div class="carousel-inner">
 		                  <div class="item active">
-		                    <img src="images/ServeeBanner1.png.jpg" alt="First slide">
+		                    <img src="images/SERVEE-FB-BANNER.jpg" alt="First slide">
 		                  </div>
 		                  <div class="item">
-		                    <img src="images/ServeeBanner2.jpg" alt="Second slide">
+		                    <img src="images/SERVEE-FB-BANNER-2.jpg" alt="Second slide">
 		                  </div>
 		                  <div class="item">
-		                    <img src="images/ServeeBanner3.jpg" alt="Third slide">
+		                    <img src="images/SERVEE-B-BANNER-3.jpg" alt="Third slide">
 		                  </div>
 		                </div>
 		                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -46,7 +46,7 @@
 		                  <span class="fa fa-angle-right"></span>
 		                </a>
 		            </div>
-		            <h2>Offer Services for eveyone</h2>
+		            <h2>Offer Services for Everyone</h2>
 		       		<?php
 		       			$month = date('m');
 		       			$conn = $pdo->open();
@@ -98,49 +98,5 @@
 </div>
 
 <?php include 'includes/scripts.php'; ?>
-</body>
-</html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gradient Background</title>
-<style>
-  body {
-    /* Dynamic Gradient background */
-    <?php
-      // Define colors
-      $pink = "#ff69b4";
-      $purple = "#800080";
-      // Generate CSS gradient background
-      echo "background: linear-gradient(135deg, $pink, $purple);";
-    ?>
-    /* For full page height */
-    height: 100vh;
-    /* Center content */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Remove default margin */
-    margin: 0;
-  }
-
-  /* Additional styling for text */
-  h1 {
-    color: white;
-    font-family: Arial, sans-serif;
-  }
-
-  /* Content wrapper */
-  .content-wrapper {
-    /* Apply same background color as body */
-    background: linear-gradient(135deg, <?php echo $pink; ?>, <?php echo $purple; ?>);
-    /* Additional styling */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-</style>
-</head>
 </body>
 </html>

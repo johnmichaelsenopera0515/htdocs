@@ -43,7 +43,7 @@
         </ul>
         <form method="POST" class="navbar-form navbar-left" action="search.php">
           <div class="input-group">
-              <input type="text" class="form-control" id="navbar-search-input" name="keyword" placeholder="Search for Product" required>
+              <input type="text" class="form-control" id="navbar-search-input" name="keyword" placeholder="Search for Service" required>
               <span class="input-group-btn" id="searchBtn" style="display:none;">
                   <button type="submit" class="btn btn-default btn-flat"><i class="fa fa-search"></i> </button>
               </span>
@@ -61,7 +61,7 @@
               <span class="label label-success cart_count"></span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have <span class="cart_count"></span> item(s) in cart</li>
+              <li class="header">You have <span class="cart_count"></span> Service(s) in cart</li>
               <li>
                 <ul class="menu" id="cart_menu">
                 </ul>

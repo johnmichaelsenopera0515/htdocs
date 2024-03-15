@@ -75,7 +75,7 @@
       		</div>
     	</form>
       <br>
-      <a href="login.php">I already have a membership</a><br>
+      <a href="login.php">I already have an account</a><br>
       <a href="index.php"><i class="fa fa-home"></i> Home</a>
   	</div>
 </div>
@@ -83,35 +83,3 @@
 <?php include 'includes/scripts.php' ?>
 </body>
 </html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gradient Background</title>
-<style>
-  body {
-    <?php
-      // Define colors
-      $pink = "#ff69b4";
-      $purple = "#800080";
-      // Generate CSS gradient background
-      echo "background: linear-gradient(135deg, $pink, $purple);";
-    ?>
-    /* For full page height */
-    height: 100vh;
-    /* Center content */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Remove default margin */
-    margin: 0;
-  }
-
-  /* Additional styling for text */
-  h1 {
-    color: white;
-    font-family: Arial, sans-serif;
-  }
-</style>
-</head>
-<body>

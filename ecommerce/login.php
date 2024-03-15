@@ -39,13 +39,13 @@
           </div>
       		<div class="row">
     			<div class="col-xs-4">
-          			<button type="submit" class="btn btn-primary btn-block btn-flat" name="login"><i class="fa fa-sign-in"></i> Sign In</button>
+          			<button type="submit" class="btn btn-primary btn-block btn-flat" name="login"><i class="fa fa-sign-in"></i> Login</button>
         		</div>
       		</div>
     	</form>
       <br>
       <a href="password_forgot.php">I forgot my password</a><br>
-      <a href="signup.php" class="text-center">Register a new membership</a><br>
+      <a href="signup.php" class="text-center">Don't have an account? Sign Up</a><br>
       <a href="index.php"><i class="fa fa-home"></i> Home</a>
   	</div>
 </div>
