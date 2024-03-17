@@ -4,7 +4,14 @@
 
 	if(isset($_SESSION['admin'])){
 		header('location: admin/home.php');
+	}else if(isset($_SESSION['seller'])){
+		header('location: seller/home.php');
+	}else if(isset($_SESSION['employee'])){
+		header('location: employee/myjob_order.php');
 	}
+
+
+	
 
 	if(isset($_SESSION['user'])){
 		$conn = $pdo->open();

@@ -47,7 +47,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
+              <!-- <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a> -->
             </div>
             <div class="box-body">
               <table id="example1" class="table table-bordered">
@@ -55,39 +55,43 @@
                   <th>Photo</th>
                   <th>Email</th>
                   <th>Name</th>
+                  <th>Type</th>
                   <th>Status</th>
-                  <th>Date Added</th>
-                  <th>Tools</th>
+                  <th>Date Added</th> 
                 </thead>
                 <tbody>
                   <?php
                     $conn = $pdo->open();
 
                     try{
-                      $stmt = $conn->prepare("SELECT * FROM users WHERE type=:type");
-                      $stmt->execute(['type'=>0]);
+                      $stmt = $conn->prepare("SELECT * FROM users WHERE type<>:type");
+                      $stmt->execute(['type'=>1]);
                       foreach($stmt as $row){
                         $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
                         $status = ($row['status']) ? '<span class="label label-success">active</span>' : '<span class="label label-danger">not verified</span>';
                         $active = (!$row['status']) ? '<span class="pull-right"><a href="#activate" class="status" data-toggle="modal" data-id="'.$row['id'].'"><i class="fa fa-check-square-o"></i></a></span>' : '';
+                        if($row['type'] == 0){
+                          $user_type = "<button class='btn btn-primary btn-sm btn-flat text-bold'> Customer</button>";
+                        }else if($row['type'] == 2){ 
+                          $user_type = "<button class='btn btn-sm btn-flat text-bold' style='background-color:#ffbd59'> Seller</button>";
+                        }else if($row['type'] == 3){ 
+                          $user_type = "<button class='btn btn-sm btn-flat text-bold' style='background-color:red;color:white'> Employee</button>";
+                        }
                         echo "
                           <tr>
                             <td>
-                              <img src='".$image."' height='30px' width='30px'>
-                              <span class='pull-right'><a href='#edit_photo' class='photo' data-toggle='modal' data-id='".$row['id']."'><i class='fa fa-edit'></i></a></span>
+                              <img src='".$image."' height='30px' width='30px'> 
                             </td>
                             <td>".$row['email']."</td>
                             <td>".$row['firstname'].' '.$row['lastname']."</td>
                             <td>
+                            $user_type
+                            </td>
+                            <td>
                               ".$status."
                               ".$active."
                             </td>
-                            <td>".date('M d, Y', strtotime($row['created_on']))."</td>
-                            <td>
-                              <a href='cart.php?user=".$row['id']."' class='btn btn-info btn-sm btn-flat'><i class='fa fa-search'></i> Cart</a>
-                              <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
-                              <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
-                            </td>
+                            <td>".date('M d, Y', strtotime($row['created_on']))."</td> 
                           </tr>
                         ";
                       }

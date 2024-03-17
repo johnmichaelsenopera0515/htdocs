@@ -1,5 +1,6 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
+ 
 <body class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
 
@@ -31,9 +32,14 @@
 	        		</div>
 	        		<?php
 	        			if(isset($_SESSION['user'])){
-	        				echo "
-	        					<div id='paypal-button'></div>
+	        				// echo "
+	        				// 	<div id='paypal-button'></div>
+	        				// ";
+
+							echo "
+								<div id=paypal-button-container></div>
 	        				";
+							
 	        			}
 	        			else{
 	        				echo "
@@ -156,44 +162,80 @@ function getTotal(){
 </script>
 <!-- Paypal Express -->
 <script>
-paypal.Button.render({
-    env: 'sandbox', // change for production if app is live,
+// paypal.Button.render("#el",{
+//     env: 'sandbox', // change for production if app is live,
 
-	client: {
-        sandbox:    'ASb1ZbVxG5ZFzCWLdYLi_d1-k5rmSjvBZhxP2etCxBKXaJHxPba13JJD_D3dTNriRbAv3Kp_72cgDvaZ',
-        //production: 'AaBHKJFEej4V6yaArjzSx9cuf-UYesQYKqynQVCdBlKuZKawDDzFyuQdidPOBSGEhWaNQnnvfzuFB9SM'
-    },
+// 	client: {
+//         sandbox:    'AWZU2hO_wiHZT8KdeE4ZPqsXSd7E3Sqb0Xmc90Q22O7ASuMQKVA54cgXkERSzKd4ye5pmsyTvnTE5U3s',
+//         //production: 'AaBHKJFEej4V6yaArjzSx9cuf-UYesQYKqynQVCdBlKuZKawDDzFyuQdidPOBSGEhWaNQnnvfzuFB9SM'
+//     },
 
-    commit: true, // Show a 'Pay Now' button
+//     commit: true, // Show a 'Pay Now' button
 
-    style: {
-    	color: 'gold',
-    	size: 'small'
-    },
+//     style: {
+//     	color: 'gold',
+//     	size: 'small'
+//     },
 
-    payment: function(data, actions) {
-        return actions.payment.create({
-            payment: {
-                transactions: [
-                    {
-                    	//total purchase
-                        amount: { 
-                        	total: total, 
-                        	currency: 'USD' 
+//     payment: function(data, actions) {
+//         return actions.payment.create({
+//             payment: {
+//                 transactions: [
+//                     {
+//                     	//total purchase
+//                         amount: { 
+//                         	total: total, 
+//                         	currency: 'PHP' 
+//                         }
+//                     }
+//                 ]
+//             }
+//         });
+//     },
+
+//     onAuthorize: function(data, actions) {
+//         return actions.payment.execute().then(function(payment) {
+// 			window.location = 'sales.php?pay='+payment.id;
+//         });
+//     },
+
+// }, '#paypal-button');
+
+window.paypal
+  .Buttons({
+	 // Set up your transaction details here
+			 createOrder: function(data, actions) {
+                return actions.order.create({
+					
+                    purchase_units: [
+                        {
+							// reference_id: "d9f80740-38f0-11e8-b467-0ed5f89f718b",
+                            amount: {
+                                currency_code: 'USD', // Change to your desired currency code
+                                value: '10.00' // Change to the transaction amount
+                            }
                         }
-                    }
-                ]
+                    ]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(payment) {
+                    window.location = 'sales.php?pay='+payment.id;
+                });
+            },
+            onError: function(err) {
+                // Handle any errors that occur during the transaction
+                console.error(err);
             }
-        });
-    },
+})
+  .render("#paypal-button-container");
 
-    onAuthorize: function(data, actions) {
-        return actions.payment.execute().then(function(payment) {
-			window.location = 'sales.php?pay='+payment.id;
-        });
-    },
+// Example function to show a result to the user. Your site's UI library can be used instead.
+function resultMessage(message) {
+  const container = document.querySelector("#result-message");
+  container.innerHTML = message;
+}
 
-}, '#paypal-button');
 </script>
 </body>
 </html>

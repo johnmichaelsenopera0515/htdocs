@@ -56,50 +56,26 @@
         }
       ?>
       <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <?php
-                $stmt = $conn->prepare("SELECT * FROM details LEFT JOIN products ON products.id=details.product_id");
-                $stmt->execute();
-
-                $total = 0;
-                foreach($stmt as $srow){
-                  $subtotal = $srow['price']*$srow['quantity'];
-                  $total += $subtotal;
-                }
-
-                echo "<h3>₱ ".number_format_short($total, 2)."</h3>";
-              ?>
-              <p>Total Sales</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-shopping-cart"></i>
-            </div>
-            <a href="sales.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
+      <div class="row"> 
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
               <?php
-                $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM products");
+                $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM products where products.status='A'");
                 $stmt->execute();
                 $prow =  $stmt->fetch();
 
                 echo "<h3>".$prow['numrows']."</h3>";
               ?>
           
-              <p>Number of Products</p>
+              <p>Number of Active Services</p>
             </div>
             <div class="icon">
               <i class="fa fa-barcode"></i>
             </div>
-            <a href="products.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <!-- <a href="student.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> -->
           </div>
         </div>
         <!-- ./col -->
@@ -108,7 +84,7 @@
           <div class="small-box bg-yellow">
             <div class="inner">
               <?php
-                $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM users");
+                $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM users where users.status='1'");
                 $stmt->execute();
                 $urow =  $stmt->fetch();
 
@@ -120,40 +96,13 @@
             <div class="icon">
               <i class="fa fa-users"></i>
             </div>
-            <a href="users.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <!-- <a href="return.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> -->
           </div>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <?php
-                $stmt = $conn->prepare("SELECT * FROM details LEFT JOIN sales ON sales.id=details.sales_id LEFT JOIN products ON products.id=details.product_id WHERE sales_date=:sales_date");
-                $stmt->execute(['sales_date'=>$today]);
-
-                $total = 0;
-                foreach($stmt as $trow){
-                  $subtotal = $trow['price']*$trow['quantity'];
-                  $total += $subtotal;
-                }
-
-                echo "<h3>₱ ".number_format_short($total, 2)."</h3>";
-                
-              ?>
-
-              <p>Sales Today</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-money"></i>
-            </div>
-            <a href="borrow.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
+        <!-- ./col --> 
       </div>
       <!-- /.row -->
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
@@ -185,7 +134,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       </section>
       <!-- right col -->

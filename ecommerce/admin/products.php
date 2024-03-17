@@ -1,9 +1,13 @@
 <?php include 'includes/session.php'; ?>
 <?php
-  $where = '';
+  $where_request = '';
+  $where_approved = '';
+  $where_declined = '';
   if(isset($_GET['category'])){
     $catid = $_GET['category'];
-    $where = 'WHERE category_id ='.$catid;
+    $where_request = 'WHERE products.category_id ='.$catid;
+    $where_approved = 'WHERE  products.category_id ='.$catid;
+    $where_declined = 'WHERE  products.category_id ='.$catid;
   }
 
 ?>
@@ -52,88 +56,257 @@
           unset($_SESSION['success']);
         }
       ?>
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat" id="addproduct"><i class="fa fa-plus"></i> New</a>
-              <div class="pull-right">
-                <form class="form-inline">
-                  <div class="form-group">
-                    <label>Category: </label>
-                    <select class="form-control input-sm" id="select_category">
-                      <option value="0">ALL</option>
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#tab1">Request</a></li>
+        <li><a data-toggle="tab" href="#tab2">Approved</a></li> 
+        <li><a data-toggle="tab" href="#tab3">Declined</a></li> 
+      </ul> 
+      <div class="tab-content">
+        <div id="tab1" class="tab-pane fade in active">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header with-border">
+                  <!-- <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat" id="addproduct"><i class="fa fa-plus"></i> New</a> -->
+                  <div class="pull-right">
+                    <form class="form-inline">
+                      <div class="form-group">
+                        <label>Category: </label>
+                        <select class="form-control input-sm" id="select_category">
+                          <option value="0">ALL</option>
+                          <?php
+                            $conn = $pdo->open();
+
+                            $stmt = $conn->prepare("SELECT * FROM category");
+                            $stmt->execute();
+
+                            foreach($stmt as $crow){
+                              $selected = ($crow['id'] == $catid) ? 'selected' : ''; 
+                              echo "
+                                <option value='".$crow['id']."' ".$selected.">".$crow['name']."</option>
+                              ";
+                            }
+
+                            $pdo->close();
+                          ?>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <table id="example1" class="table table-bordered">
+                    <thead>
+                      <th>Service Provider</th>
+                      <th>Service Name</th>
+                      <!-- <th>Photo</th> -->
+                      <th>Description</th>
+                      <th>Price</th>
+                      <th>Views Today</th>
+                      <th>Tools</th>
+                    </thead>
+                    <tbody>
                       <?php
                         $conn = $pdo->open();
 
-                        $stmt = $conn->prepare("SELECT * FROM category");
-                        $stmt->execute();
-
-                        foreach($stmt as $crow){
-                          $selected = ($crow['id'] == $catid) ? 'selected' : ''; 
-                          echo "
-                            <option value='".$crow['id']."' ".$selected.">".$crow['name']."</option>
-                          ";
+                        try{
+                          $now = date('Y-m-d');
+                          $stmt = $conn->prepare("SELECT products.*,users.company FROM products INNER JOIN users on products.seller_id = users.id $where_request and products.status='P'");
+                          $stmt->execute();
+                          foreach($stmt as $row){
+                            $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/noimage.jpg';
+                            $counter = ($row['date_view'] == $now) ? $row['counter'] : 0;
+                            echo "
+                              <tr> 
+                                <td>".$row['company']."</td>
+                                <td>".$row['name']."</td> 
+                                <td><a href='#description' data-toggle='modal' class='btn btn-info btn-sm btn-flat desc' data-id='".$row['id']."'><i class='fa fa-search'></i> View</a></td>
+                                <td>PHP ".number_format($row['price'], 2)."</td>
+                                <td>".$counter."</td>
+                                <td>
+                                  <button class='btn btn-success btn-sm approve btn-flat' data-id='".$row['id']."'> Approve</button>
+                                  <button class='btn btn-danger btn-sm decline btn-flat' data-id='".$row['id']."'>  Decline</button>
+                                </td>
+                              </tr>
+                            ";
+                          }
+                        }
+                        catch(PDOException $e){
+                          echo $e->getMessage();
                         }
 
                         $pdo->close();
                       ?>
-                    </select>
-                  </div>
-                </form>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-            </div>
-            <div class="box-body">
-              <table id="example1" class="table table-bordered">
-                <thead>
-                  <th>Name</th>
-                  <th>Photo</th>
-                  <th>Description</th>
-                  <th>Price</th>
-                  <th>Views Today</th>
-                  <th>Tools</th>
-                </thead>
-                <tbody>
-                  <?php
-                    $conn = $pdo->open();
-
-                    try{
-                      $now = date('Y-m-d');
-                      $stmt = $conn->prepare("SELECT * FROM products $where");
-                      $stmt->execute();
-                      foreach($stmt as $row){
-                        $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/noimage.jpg';
-                        $counter = ($row['date_view'] == $now) ? $row['counter'] : 0;
-                        echo "
-                          <tr>
-                            <td>".$row['name']."</td>
-                            <td>
-                              <img src='".$image."' height='30px' width='30px'>
-                              <span class='pull-right'><a href='#edit_photo' class='photo' data-toggle='modal' data-id='".$row['id']."'><i class='fa fa-edit'></i></a></span>
-                            </td>
-                            <td><a href='#description' data-toggle='modal' class='btn btn-info btn-sm btn-flat desc' data-id='".$row['id']."'><i class='fa fa-search'></i> View</a></td>
-                            <td>₱ ".number_format($row['price'], 2)."</td>
-                            <td>".$counter."</td>
-                            <td>
-                              <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
-                              <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
-                            </td>
-                          </tr>
-                        ";
-                      }
-                    }
-                    catch(PDOException $e){
-                      echo $e->getMessage();
-                    }
-
-                    $pdo->close();
-                  ?>
-                </tbody>
-              </table>
             </div>
           </div>
         </div>
-      </div>
+        <div id="tab2" class="tab-pane fade in">
+        <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header with-border">
+                  <!-- <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat" id="addproduct"><i class="fa fa-plus"></i> New</a> -->
+                  <div class="pull-right">
+                    <form class="form-inline">
+                      <div class="form-group">
+                        <label>Category: </label>
+                        <select class="form-control input-sm" id="select_category">
+                          <option value="0">ALL</option>
+                          <?php
+                            $conn = $pdo->open();
+
+                            $stmt = $conn->prepare("SELECT * FROM category");
+                            $stmt->execute();
+
+                            foreach($stmt as $crow){
+                              $selected = ($crow['id'] == $catid) ? 'selected' : ''; 
+                              echo "
+                                <option value='".$crow['id']."' ".$selected.">".$crow['name']."</option>
+                              ";
+                            }
+
+                            $pdo->close();
+                          ?>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <table id="example1" class="table table-bordered">
+                    <thead>
+                      <th>Service Provider</th>
+                      <th>Service Name</th>
+                      <!-- <th>Photo</th> -->
+                      <th>Description</th>
+                      <th>Price</th>
+                      <th>Views Today</th>
+                      <th>Status</th>
+                    </thead>
+                    <tbody>
+                      <?php
+                        $conn = $pdo->open();
+
+                        try{
+                          $now = date('Y-m-d');
+                          $stmt = $conn->prepare("SELECT * FROM products INNER JOIN users on products.seller_id = users.id $where_approved  and products.status='A'");
+                          $stmt->execute();
+                          foreach($stmt as $row){
+                            $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/noimage.jpg';
+                            $counter = ($row['date_view'] == $now) ? $row['counter'] : 0;
+                            echo "
+                              <tr> 
+                                <td>".$row['company']."</td>
+                                <td>".$row['name']."</td> 
+                                <td><a href='#description' data-toggle='modal' class='btn btn-info btn-sm btn-flat desc' data-id='".$row['id']."'><i class='fa fa-search'></i> View</a></td>
+                                <td>PHP ".number_format($row['price'], 2)."</td>
+                                <td>".$counter."</td>
+                                <td>
+                                  <button class='btn btn-primary btn-flat' > Approved</button>
+                                </td>
+                              </tr>
+                            ";
+                          }
+                        }
+                        catch(PDOException $e){
+                          echo $e->getMessage();
+                        }
+
+                        $pdo->close();
+                      ?>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div id="tab3" class="tab-pane fade in">
+        <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header with-border">
+                  <!-- <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat" id="addproduct"><i class="fa fa-plus"></i> New</a> -->
+                  <div class="pull-right">
+                    <form class="form-inline">
+                      <div class="form-group">
+                        <label>Category: </label>
+                        <select class="form-control input-sm" id="select_category">
+                          <option value="0">ALL</option>
+                          <?php
+                            $conn = $pdo->open();
+
+                            $stmt = $conn->prepare("SELECT * FROM category");
+                            $stmt->execute();
+
+                            foreach($stmt as $crow){
+                              $selected = ($crow['id'] == $catid) ? 'selected' : ''; 
+                              echo "
+                                <option value='".$crow['id']."' ".$selected.">".$crow['name']."</option>
+                              ";
+                            }
+
+                            $pdo->close();
+                          ?>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <table id="example1" class="table table-bordered">
+                    <thead>
+                      <th>Service Provider</th>
+                      <th>Service Name</th>
+                      <!-- <th>Photo</th> -->
+                      <th>Description</th>
+                      <th>Price</th>
+                      <th>Views Today</th>
+                      <th>Status</th>
+                    </thead>
+                    <tbody>
+                      <?php
+                        $conn = $pdo->open();
+
+                        try{
+                          $now = date('Y-m-d');
+                          $stmt = $conn->prepare("SELECT * FROM products INNER JOIN users on products.seller_id = users.id $where_declined and products.status='D'");
+                          $stmt->execute();
+                          foreach($stmt as $row){
+                            $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/noimage.jpg';
+                            $counter = ($row['date_view'] == $now) ? $row['counter'] : 0;
+                            echo "
+                              <tr> 
+                                <td>".$row['company']."</td>
+                                <td>".$row['name']."</td> 
+                                <td><a href='#description' data-toggle='modal' class='btn btn-info btn-sm btn-flat desc' data-id='".$row['id']."'><i class='fa fa-search'></i> View</a></td>
+                                <td>PHP ".number_format($row['price'], 2)."</td>
+                                <td>".$counter."</td>
+                                <td>
+                                  <button class='btn btn-danger btn-flat' > Declined</button>
+                                </td>
+                              </tr>
+                            ";
+                          }
+                        }
+                        catch(PDOException $e){
+                          echo $e->getMessage();
+                        }
+
+                        $pdo->close();
+                      ?>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div> 
     </section>
      
   </div>
@@ -154,10 +327,18 @@ $(function(){
     getRow(id);
   });
 
-  $(document).on('click', '.delete', function(e){
+  $(document).on('click', '.decline', function(e){
     e.preventDefault();
-    $('#delete').modal('show');
+    $('#decline').modal('show');
     var id = $(this).data('id');
+    getRow(id);
+  });
+
+  $(document).on('click', '.approve', function(e){
+    e.preventDefault();
+    $('#approve').modal('show');
+    var id = $(this).data('id');
+     
     getRow(id);
   });
 

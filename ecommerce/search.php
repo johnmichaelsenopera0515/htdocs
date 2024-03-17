@@ -16,7 +16,7 @@
 	       			
 	       			$conn = $pdo->open();
 
-	       			$stmt = $conn->prepare("SELECT COUNT(*) AS numrows FROM products WHERE name LIKE :keyword");
+	       			$stmt = $conn->prepare("SELECT COUNT(*) AS numrows FROM products WHERE  products.status='A' and name LIKE :keyword");
 	       			$stmt->execute(['keyword' => '%'.$_POST['keyword'].'%']);
 	       			$row = $stmt->fetch();
 	       			if($row['numrows'] < 1){

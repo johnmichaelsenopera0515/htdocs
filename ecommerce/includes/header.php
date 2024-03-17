@@ -3,7 +3,7 @@
 <head>
   	<meta charset="utf-8">
   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  	<title>Servee</title>
+  	<title>Easyserve</title>
   	<!-- Tell the browser to be responsive to screen width -->
   	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   	<!-- Bootstrap 3.3.7 -->
@@ -18,7 +18,7 @@
        folder instead of downloading all of them to reduce the load. -->
   	<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
     <!-- Magnify -->
-    <link rel="stylesheet" href="magnify/magnify.min.css">
+    <!-- <link rel="stylesheet" href="magnify/magnify.min.css"> -->
 
   	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,7 +31,8 @@
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
     <!-- Paypal Express -->
-    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    <!-- <script src="https://www.paypalobjects.com/api/checkout.js"></script> -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AWZU2hO_wiHZT8KdeE4ZPqsXSd7E3Sqb0Xmc90Q22O7ASuMQKVA54cgXkERSzKd4ye5pmsyTvnTE5U3s&currency=USD"></script> 
     <!-- Google Recaptcha -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
 

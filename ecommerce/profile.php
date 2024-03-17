@@ -9,6 +9,7 @@
 <div class="wrapper">
 
 	<?php include 'includes/navbar.php'; ?>
+	
 	 
 	  <div class="content-wrapper">
 	    <div class="container">
@@ -59,7 +60,10 @@
 	        							<h4><?php echo $user['email']; ?></h4>
 	        							<h4><?php echo (!empty($user['contact_info'])) ? $user['contact_info'] : 'N/a'; ?></h4>
 	        							<h4><?php echo (!empty($user['address'])) ? $user['address'] : 'N/a'; ?></h4>
+										
+										
 	        							<h4><?php echo date('M d, Y', strtotime($user['created_on'])); ?></h4>
+										<!-- <input id="autocomplete" placeholder="Enter your address" type="text"></input> -->
 	        						</div>
 	        					</div>
 	        				</div>
@@ -129,9 +133,16 @@
   	<?php include 'includes/profile_modal.php'; ?>
 </div>
 
-<?php include 'includes/scripts.php'; ?>
+<?php include 'includes/scripts_staticMap.php'; ?>
+<!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuvYHHq3_kHfy-4KjtnOd-u5OAdMBXin4&callback=initMap&libraries=places&v=weekly"
+      defer
+></script> -->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuvYHHq3_kHfy-4KjtnOd-u5OAdMBXin4&callback=initMap&libraries=places"  async defer></script> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuvYHHq3_kHfy-4KjtnOd-u5OAdMBXin4&libraries=places&callback=initMap" async defer></script>
 <script>
-$(function(){
+$(function(){ 
+	
 	$(document).on('click', '.transact', function(e){
 		e.preventDefault();
 		$('#transaction').modal('show');
@@ -155,5 +166,11 @@ $(function(){
 	});
 });
 </script>
+<style>
+	
+	.pac-container{
+		z-index: 10000 !important;
+	} 
+</style>
 </body>
 </html>

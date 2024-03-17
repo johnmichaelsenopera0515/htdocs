@@ -1,7 +1,7 @@
 <?php include 'includes/session.php'; ?>
 <?php
   if(isset($_SESSION['user'])){
-    header('location: cart_view.php');
+    header('location: index.php');
   }
 ?>
 <?php include 'includes/header.php'; ?>
@@ -26,7 +26,7 @@
       }
     ?>
   	<div class="login-box-body">
-    	<p class="login-box-msg">Sign in to start your session</p>
+    	<p class="login-box-msg">Sign in</p>
 
     	<form action="verify.php" method="POST">
       		<div class="form-group has-feedback">
@@ -39,13 +39,13 @@
           </div>
       		<div class="row">
     			<div class="col-xs-4">
-          			<button type="submit" class="btn btn-primary btn-block btn-flat" name="login"><i class="fa fa-sign-in"></i> Login</button>
+          			<button type="submit" class="btn btn-primary btn-block btn-flat"  style="background-color:#ffbd59;color:black" name="login"><i class="fa fa-sign-in"></i> Sign In</button>
         		</div>
       		</div>
     	</form>
       <br>
       <a href="password_forgot.php">I forgot my password</a><br>
-      <a href="signup.php" class="text-center">Don't have an account? Sign Up</a><br>
+      <a href="signup.php" class="text-center">Register a new membership</a><br>
       <a href="index.php"><i class="fa fa-home"></i> Home</a>
   	</div>
 </div>
