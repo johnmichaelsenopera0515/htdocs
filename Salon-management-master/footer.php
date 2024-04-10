@@ -56,9 +56,9 @@
 			<h3>Follow US</h3>
 				<div class="img_list">
 				    <ul>
-					     <li><img src="images/28.png" alt=""><a href="#">Join Us on Facebook</a></li>
-					     <li><img src="images/twitter.png" alt=""><a href="#">Follow Us on Twitter</a></li>
-					     <li><img src="images/39.png" alt=""><a href="#">Share Us on Twitter</a></li>
+					<li><img src="images/28.png" alt=""><a href="https://www.facebook.com/profile.php?id=61557014187880&mibextid=opq0tG/"> JOIN US ON FACEBOOK</a></p>
+					     <li><img src="images/twitter.png" alt=""><a href="#">Share Us on Twitter</a></li>
+					     <li><img src="images/39.png" alt=""><a href="mailto:servee645@gmail.com"> SHARE US ON GMAIL</a></p>
 				    </ul>
 				</div>
 		 </div>

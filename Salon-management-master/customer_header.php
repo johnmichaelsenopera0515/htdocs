@@ -23,10 +23,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="header_top">
 			<div class="wrap">
 			 <div class="logo">
-						<a href="index.html"><img src="images/logo remove background.png" alt="" /></a>
+						<a href="index.html"><img src="images/White_Servee.png" alt="" /></a>
 					</div>
 			    <div class="call">
-			    	<p><img src="images/45.png" alt="" />Call US: 111-234-56789</p>
+			    	<p><img src="images/45.png" alt="" />Call US: +63 9813764031</p>
 			    </div>
 			  			 
 			<div class="clear"></div>

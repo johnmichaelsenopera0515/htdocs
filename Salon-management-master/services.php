@@ -18,10 +18,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="header_top">
 			<div class="wrap">
 			 <div class="logo">
-						<a href="index.php"><img src="images/logo remove background.png" alt="" /></a>
+						<a href="index.php"><img src="images/White_Servee.png" alt="" /></a>
 					</div>
 			    <div class="call">
-			    <p><img src="images/45.png" alt="" />Call US: 111-234-56789</p>
+			    <p><img src="images/45.png" alt="" />Call US: +63 9813764031</p>
 			    </div>
 			  			 
 			<div class="clear"></div>
@@ -286,9 +286,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h3>Follow US</h3>
 				<div class="img_list">
 				    <ul>
-					     <li><img src="images/28.png" alt=""><a href="#">Join Us on Facebook</a></li>
-					     <li><img src="images/twitter.png" alt=""><a href="#">Follow Us on Twitter</a></li>
-					     <li><img src="images/39.png" alt=""><a href="#">Share Us on Twitter</a></li>
+					<li><img src="images/28.png" alt=""><a href="https://www.facebook.com/profile.php?id=61557014187880&mibextid=opq0tG/"> JOIN US ON FACEBOOK</a></p>
+					     <li><img src="images/twitter.png" alt=""><a href="#">Share Us on Twitter</a></li>
+					     <li><img src="images/39.png" alt=""><a href="mailto:servee645@gmail.com"> SHARE US ON GMAIL</a></p>
 				    </ul>
 				</div>
 		 </div>

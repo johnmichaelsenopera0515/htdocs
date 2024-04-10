@@ -16,10 +16,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="header_top">
 			<div class="wrap">
 			 <div class="logo">
-						<a href="index.php"><img src="images/logo remove background.png" alt="" /></a>
+						<a href="index.php"><img src="images/White_Servee.png" alt="" /></a>
 					</div>
 			    <div class="call">
-			    	<p><img src="images/45.png" alt="" />Call US: 111-234-56789</p>
+			    	<p><img src="images/45.png" alt="" />Call US: +63 9813764031</p>
 			    </div>
 			  			 
 			<div class="clear"></div>
@@ -68,12 +68,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       				</div>
       			<div class="company_address">
 				     	<h2>Company Information :</h2>
-						    	<p>Reflection Salon & Spa,</p>
-						   		<p>New City</p>
+						    	<p>Servee PH for your home services</p>
+						   		<p>Metro Manila</p>
 						   		<p>Philippines</p>
-				   		<p>Phone:(00) 222 666 444</p>
-				   		<p>Fax: (000) 123 45 6 78</p>
-				 	 	<p>Email: <span>reflection@mycompany.com</span></p>
+				   		<p>Phone:(+63) </p>
+				   		<p>Fax: (000) </p>
+				 	 	<p>Email: <span>servee645@gmail.com</span></p>
 				   		<p>Follow on: <span>Facebook</span>, <span>Gmail</span></p>
 				 </div>
 			  </div>			
@@ -102,11 +102,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h3>Get In Touch</h3>
 							<div class="address">
 							<ul>
-						  	 <li>Reflection Salon & Spa,</li>
-						  	  <li>New City,</li>
+						  	 <li>Servee PH for your home services</li>
+						  	  <li>Metro Manila</li>
 						  	   <li>Philippines.</li>
-						  	 <li>www.reflection@gmail.com</li>
-						  	 <li><span>Telephone :</span> +06821458963</li>
+						  	 <li>www.servee645@gmail.com</li>
+						  	 <li><span>Telephone :</span> +06321458963</li>
 						  	 <li><span>Fax :</span> +01478523690</li>
 						  </ul>
 				   </div>				  
@@ -127,9 +127,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h3>Follow US</h3>
 				<div class="img_list">
 				    <ul>
-					     <li><img src="images/28.png" alt=""><a href="#">Join Us on Facebook</a></li>
-					     <li><img src="images/twitter.png" alt=""><a href="#">Follow Us on Twitter</a></li>
-					     <li><img src="images/39.png" alt=""><a href="#">Share Us on Twitter</a></li>
+					<li><img src="images/28.png" alt=""><a href="https://www.facebook.com/profile.php?id=61557014187880&mibextid=opq0tG/"> JOIN US ON FACEBOOK</a></p>
+					     <li><img src="images/twitter.png" alt=""><a href="#">Share Us on Twitter</a></li>
+					     <li><img src="images/39.png" alt=""><a href="mailto:servee645@gmail.com"> SHARE US ON GMAIL</a></p>
 				    </ul>
 				</div>
 		 </div>
