@@ -63,7 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     	 				<h2>Find Us Here</h2>
 					    	  <div class="map">
 							  
-							   	    <iframe width="100%" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px">View Larger Map</a></small>
+							  <iframe width="100%" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.5639033636983!2d121.11199751475317!3d14.646425280155577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c91c3b85b93d%3A0x9c32b9e8a8c71a88!2sMarikina%2C%20Metro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sph!4v1649392613610!5m2!1sen!2sph" allowfullscreen></iframe><br><small><a href="https://www.google.com/maps/place/Marikina,+Metro+Manila,+Philippines/" style="color:#666;text-align:left;font-size:12px">View Larger Map</a></small>
 							  </div>
       				</div>
       			<div class="company_address">
@@ -71,8 +71,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						    	<p>Servee PH for your home services</p>
 						   		<p>Metro Manila</p>
 						   		<p>Philippines</p>
-				   		<p>Phone:(+63) </p>
-				   		<p>Fax: (000) </p>
+				   		<p>Phone:(+63) 0913764031</p>
 				 	 	<p>Email: <span>servee645@gmail.com</span></p>
 				   		<p>Follow on: <span>Facebook</span>, <span>Gmail</span></p>
 				 </div>

@@ -29,8 +29,8 @@ else {?>
 </tr>
 <tr><td><b>HOUSE NAME:&nbsp&nbsp&nbsp&nbsp <input type="text" name="house" value="<?php echo $row['House_name'];?>"></b></td></tr>
 <tr><td><b>CITY: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp <input type="text" name="city" value="<?php echo $row['City'];?>"></b></td></tr>
-<tr><td><b>DISTRICT:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </b>
-          <select name="district">
+<tr><td><b>Barangay:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </b>
+          <select name="Barangay">
 		  <option>--Select--</option>
 		  <?php
 		 

@@ -191,7 +191,7 @@ INSERT INTO `tbl_district` (`Dis_id`, `Dis_name`) VALUES
 (11, 'Alappuzha'),
 (12, 'Pathanamthitta'),
 (13, 'Kollam'),
-(14, 'Thiruvanathapuram');
+(14, 'Thiruvanathapuramz');
 
 -- --------------------------------------------------------
 

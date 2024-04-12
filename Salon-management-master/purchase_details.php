@@ -19,8 +19,8 @@ include "customer_header.php";
           <td><b>City</b></td>
           <td><input type="text" name="add2" id="add2" value=""></td>
           </tr>
-		   <td><b>District</b></td>
-          <td><select name="district">
+		   <td><b>Barangay</b></td>
+          <td><select name="Barangay">
 		  <option>--Select--</option>
 		  <?php
 		  $res=mysqli_query($con,"SELECT * FROM `tbl_district`");

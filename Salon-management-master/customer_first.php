@@ -74,7 +74,7 @@ include 'customer_header.php';
     	 <div class="wrap">
     	 	<div class="image group">
 				<div class="grid images_3_of_1">
-					<img src="images/welcome_img.jpg" alt="" />
+					<img src="images/work.jpg" alt="" />
 				</div><center>
 				<div class="grid span_2_of_3">
 					<h3>We Work For <span>You!</span></h3>
@@ -96,31 +96,35 @@ include 'customer_header.php';
 			   </div>
 		   </div>
     	     <div class="pack-desc">
-    	     	<h3>Lorem ipsum  <span>dolor sit amet elit</span> dolore magna aliqua</h3>
-    	     	  <p>There are many variations of passages of Lorem Ipsum available but the majority</p>
-    	     	     <div class="button"><a href="#">Purchase Our Spa Pack</a></div>
+    	     	<h3>Welcome to Our <span> Servee PH </span> Web Application!</h3>
+    	     	  <p>Discover the Power of Our Servee PH Web Applications
+
+Explore a world of possibilities with Our Servee PH web applications. We specialize in creating tailored solutions designed to elevate your online presence and drive success for your business.
+
+With a team of skilled professionals, we craft dynamic web applications that are as unique as your vision. From streamlining operations to enhancing user experiences, we have the expertise to bring your ideas to life.</p>
+    	     	     <div class="button"><a href="#">Book now!</a></div>
     	     </div>
 	      
 			<div class="spa_products">
-				<h2>Latest Spa Products</h2>
+				<h2>Offering Services</h2>
 				<div class="section group">
 				<div class="products_1_of_3">
-					  <img src="images/spa_product2.jpg" alt="" />
-					  <h3>Ipsum is dummy text </h3>
-					  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-				     <div class="read_more"><a href="#">Read More</a></div>
+					  <img src="images/spa.jpg" alt="" />
+					  <h3>Spa Treatment</h3>
+					  <p>Indulge in ultimate relaxation and rejuvenation with our luxurious spa treatments. From soothing massages to invigorating facials, our spa services are designed to pamper your body and soothe your mind. Let our skilled therapists melt away your stress and tension, leaving you feeling refreshed, revitalized, and ready to take on the world. Treat yourself to a day of blissful escape and discover the true meaning of relaxation with our exquisite spa offerings.</p>
+				     <div class="read_more"><a href="#">Go to Services</a></div>
 				</div>
 				<div class="products_1_of_3">
-					   <img src="images/spa_product1.jpg" alt="" />
-					  <h3>Duis aute irure dolor</h3>
-					  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-				     <div class="read_more"><a href="#">Read More</a></div>
+					   <img src="images/hair.jpg" alt="" />
+					  <h3>Haircut Services</h3>
+					  <p>Transform your look and express your personal style with our expert haircut services. Whether you're looking for a sleek and sophisticated cut, a trendy new style, or a simple trim to maintain your current look, our talented hairstylists are here to help. With precision and attention to detail, we'll create a hairstyle that complements your features and reflects your individuality. Step into our salon and let us work our magic to give you the perfect haircut that leaves you feeling confident and fabulous.</p>
+				     <div class="read_more"><a href="#">Go to Services</a></div>
 				</div>
 				<div class="products_1_of_3">
-					   <img src="images/spa_product3.jpg" alt="" />
-					  <h3>dolor sit amet elit</h3>
-					  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-				     <div class="read_more"><a href="#">Read More</a></div>
+					   <img src="images/makeup.jpg" alt="" />
+					  <h3>Makeup Treatments</h3>
+					  <p>Enhance your natural beauty and elevate your look with our professional makeup treatments. Whether you're preparing for a special occasion or simply want to pamper yourself, our skilled makeup artists will create a flawless look that highlights your best features and makes you feel stunning. From subtle and natural to bold and glamorous, we offer a range of makeup services to suit your preferences and occasion. Let us bring out your inner beauty and leave you feeling radiant and confident for any event or celebration.</p>
+				     <div class="read_more"><a href="#">Go to Services</a></div>
 				</div>
 			   </div>
 		  </div>

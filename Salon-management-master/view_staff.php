@@ -29,7 +29,7 @@ $row3=mysqli_fetch_array($result3);
 <tr><td>Gender:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $row['Gender'];?></td></tr>
 <tr><td>House Name:&nbsp&nbsp&nbsp&nbsp<?php echo $row['House_name'];?></td></tr>
 <tr><td>City:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $row['City'];?></td></tr>
-<tr><td>District:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $row2['Dis_name'];?></td></tr>
+<tr><td>Barangay:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $row2['Dis_name'];?></td></tr>
 <tr><td>Mobile:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $row['Mobile'];?></td></tr>
 <tr><td>Email:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $row['Email'];?></td></tr>
 <tr><td>Qualification:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $row1['Qualification'];?></td></tr>

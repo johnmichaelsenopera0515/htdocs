@@ -73,7 +73,7 @@ function Validname()
 }
 </script>
 		  <tr>
-          <td><b>District</b></td>
+          <td><b>Barangay</b></td>
           <td><select name="txt_District">
 		  <option>--Select--</option>
 		  <?php

@@ -445,7 +445,7 @@ body {
 }
 .button a:hover {
 	background-color: #7db500;
-	background: linear-gradient(top, #a0e800, #6b9c00);
+	background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a0e800), color-stop(100%, #6b9c00));
 	background: -webkit-linear-gradient(top, #a0e800, #6b9c00);
 	background: -moz-linear-gradient(top, #a0e800, #6b9c00);
 	background: -o-linear-gradient(top, #a0e800, #6b9c00);
@@ -513,10 +513,10 @@ body {
 	margin-top:10px;
 }
 .read_more a{
-	background: linear-gradient(top, #a0e800, #6b9c00);
-	background: -webkit-linear-gradient(top, #a0e800, #6b9c00);
-	background: -moz-linear-gradient(top, #a0e800, #6b9c00);
-	background: -o-linear-gradient(top, #a0e800, #6b9c00);
+	background:  -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8fcf00), color-stop(100%, #6b9c00));
+	background: -webkit-linear-gradient(top, #8fcf00, #6b9c00);
+	background: -moz-linear-gradient(top, #8fcf00, #6b9c00);
+	background: -o-linear-gradient(top, #8fcf00, #6b9c00);
   background: linear-gradient(top, #8fcf00, #6b9c00);
   background-color: #7db500;
   border-color:#77AA04;
@@ -534,7 +534,7 @@ body {
 }
 .read_more a:hover{
 	background-color: #7db500;
-	background: linear-gradient(top, #a0e800, #6b9c00);
+	background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a0e800), color-stop(100%, #6b9c00));
 	background: -webkit-linear-gradient(top, #a0e800, #6b9c00);
 	background: -moz-linear-gradient(top, #a0e800, #6b9c00);
 	background: -o-linear-gradient(top, #a0e800, #6b9c00);

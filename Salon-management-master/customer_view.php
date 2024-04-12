@@ -22,7 +22,7 @@ while($row=mysqli_fetch_array($result))
 <tr><td>Gender:&nbsp&nbsp &nbsp &nbsp &nbsp <?php echo $row['Gender'];?></td></tr>
 <tr><td>House Name:&nbsp<?php echo $row['House_name'];?></td></tr>
 <tr><td>City:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <?php echo $row['City'];?></td></tr>
-<tr><td>District:&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp  <?php echo $row1['Dis_name'];?></td></tr>
+<tr><td>Barangay:&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp  <?php echo $row1['Dis_name'];?></td></tr>
 <tr><td>Mobile:&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp  <?php echo $row['Mobile'];?></td></tr>
 <tr><td>Email:&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <?php echo $row['Email'];?></td></tr>
 <td><br><br><a href="admin_customer_view.php?>"><img src="images/fleche.png" width="35px">Back To Previous Page</td></tr></a>

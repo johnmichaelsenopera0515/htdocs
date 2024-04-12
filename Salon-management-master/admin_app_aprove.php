@@ -41,12 +41,12 @@ $res=mysqli_query($con,"SELECT * FROM `tbl_appointment` where `Status`='1' order
 	$res3=mysqli_query($con,"SELECT * FROM `tbl_registration` WHERE `Reg_id`='$c'");
 	$row3=mysqli_fetch_array($res3);
 	?>
-	<tr><td><center><?php echo $i?></td>
-	<td><center><?php echo $row2['F_name'];?></td>
-<td><center><?php echo $row1['ser_cat_name'];?></td>
-<td><center><?php echo $row['Date'];?></td>
-<td><center><?php echo $row['Time'];?></td>
-<td><center><?php echo $row3['F_name'];?> <?php echo $row3['L_name'];?></td>
+	 <td><center><?php echo $i?></td>
+    <td><center><?php echo isset($row2['F_name']) ? $row2['F_name'] : ''; ?></td>
+    <td><center><?php echo isset($row1['ser_cat_name']) ? $row1['ser_cat_name'] : ''; ?></td>
+    <td><center><?php echo isset($row['Date']) ? $row['Date'] : ''; ?></td>
+    <td><center><?php echo isset($row['Time']) ? $row['Time'] : ''; ?></td>
+    <td><center><?php echo isset($row3['F_name']) ? $row3['F_name'] : ''; ?> <?php echo isset($row3['L_name']) ? $row3['L_name'] : ''; ?></td>
 <?php
 /*$s=$row['Status'];
 if($s==1)
